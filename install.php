@@ -8,20 +8,20 @@ include(dirname(__FILE__) . '/lib/mysql.php');
 
 echo "\nCreating users table... "; flush();
 
-mysqli_query($users_db, 'CREATE TABLE IF NOT EXISTS `users` (
+mysqli_query($users_db, "CREATE TABLE IF NOT EXISTS `users` (
   `id` varchar(20) NOT NULL,
-  `type` tinyint(1) unsigned NOT NULL,
-  `name` varchar(100) NOT NULL,
+  `type` tinyint(1) unsigned NULL,
+  `name` varchar(100) NULL,
   `photo_url` varchar(200) NULL,
-  `money` decimal(9,2) NOT NULL,
+  `money` decimal(9,2) NOT NULL DEFAULT '0.00',
   PRIMARY KEY (`id`),
   KEY `type` (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
 
 echo "done."; flush();
 echo "\nCreating orders table... "; flush();
 
-mysqli_query($orders_db, 'CREATE TABLE IF NOT EXISTS `orders` (
+mysqli_query($orders_db, "CREATE TABLE IF NOT EXISTS `orders` (
   `id` int(7) unsigned NOT NULL AUTO_INCREMENT,
   `creator` varchar(20) NOT NULL,
   `owner` varchar(20) NULL,
@@ -33,7 +33,7 @@ mysqli_query($orders_db, 'CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`id`),
   KEY `creator` (`creator`),
   KEY `owner` (`owner`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
 
 echo "done.\n\n"; flush();
 
