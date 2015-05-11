@@ -7,7 +7,10 @@ error_reporting(-1);
 require_once(dirname(__FILE__) . '/lib/auth.php');
 require_once(dirname(__FILE__) . '/lib/mysql.php');
 
-switch ($_SERVER['REQUEST_URI'])
+preg_match('/\/^(.*)(\?.*)$/', $_SERVER['REQUEST_URI'], $matches);
+$controller = $matches[1];
+
+switch ($controller)
 {
 	case 'init':
 		include(dirname(__FILE__) . '/controllers/init.php');
