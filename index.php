@@ -7,7 +7,8 @@ error_reporting(-1);
 require_once(dirname(__FILE__) . '/lib/auth.php');
 require_once(dirname(__FILE__) . '/lib/mysql.php');
 
-preg_match('/\/^(.*)(\?.*)$/', $_SERVER['REQUEST_URI'], $matches);
+$matches = [];
+preg_match('/^\/(.*)(\?.*)$/', $_SERVER['REQUEST_URI'], $matches);
 $controller = $matches[1];
 
 switch ($controller)
