@@ -1,5 +1,5 @@
 <?php
-require_once('mysql.php');
+require_once(dirname(__FILE__) . '/mysql.php');
 
 if ((!isset($_GET['viewer_id'])) || (!isset($_GET['auth_key'])))
 {
