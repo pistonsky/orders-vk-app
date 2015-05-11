@@ -21,7 +21,7 @@
 			type: "GET",
 			data: {
 				viewer_id: viewer_id,
-				auth_key: auth_key
+				auth_key: auth_key,
 				type: type
 			},
 			success: function() {

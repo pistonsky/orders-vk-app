@@ -12,6 +12,9 @@ switch ($_SERVER['REQUEST_URI'])
 	case '/init':
 		include(dirname(__FILE__) . '/controllers/init.php');
 		break;
+	case '/typechange':
+		include(dirname(__FILE__) . '/controllers/typechange.php');
+		break;
 	default:
 		include(dirname(__FILE__) . '/controllers/index.php');
 }
