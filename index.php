@@ -9,10 +9,10 @@ require_once(dirname(__FILE__) . '/lib/mysql.php');
 
 switch ($_SERVER['REQUEST_URI'])
 {
-	case '/init':
+	case 'init':
 		include(dirname(__FILE__) . '/controllers/init.php');
 		break;
-	case '/typechange':
+	case 'typechange':
 		include(dirname(__FILE__) . '/controllers/typechange.php');
 		break;
 	default:
