@@ -1,5 +1,6 @@
 <?php
 require_once(dirname(__FILE__) . '/mysql.php');
+require_once(dirname(__FILE__) . '/params.php');
 
 if ((!isset($_GET['viewer_id'])) || (!isset($_GET['auth_key'])))
 {
