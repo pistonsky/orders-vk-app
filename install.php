@@ -23,19 +23,28 @@ echo "\nCreating orders table... "; flush();
 
 mysqli_query($orders_db, "CREATE TABLE IF NOT EXISTS `orders` (
   `id` int(7) unsigned NOT NULL AUTO_INCREMENT,
-  `creator` varchar(20) NOT NULL,
-  `owner` varchar(20) NULL,
+  `user_id` varchar(20) NOT NULL,
+  `menu_id` int(5) NOT NULL,
+  `status` int(2) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  KEY `menu_id` (`menu_id`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
+
+echo "done.\n\n"; flush();
+echo "\nCreating menu table... "; flush();
+
+mysqli_query($menu_db, "CREATE TABLE IF NOT EXISTS `menu` (
+  `id` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
-  `gross` decimal(9,2) unsigned NOT NULL DEFAULT '0.00',
-  `fee` decimal(9,2) unsigned NOT NULL DEFAULT '0.00',
-  `net` decimal(9,2) unsigned NOT NULL DEFAULT '0.00',
+  `price` decimal(9,2) unsigned NOT NULL DEFAULT '0.00',
+  `enabled` tinyint(1) unsigned NOT NULL DEFAULT 1
   PRIMARY KEY (`id`),
-  KEY `creator` (`creator`),
-  KEY `owner` (`owner`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
 
 echo "done.\n\n"; flush();
 
 mysqli_close($users_db);
 mysqli_close($orders_db);
+mysqli_close($menu_db);
