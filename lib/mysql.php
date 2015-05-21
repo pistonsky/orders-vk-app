@@ -13,3 +13,10 @@ if (!$orders_db) {
             . mysqli_connect_error());
 }
 mysqli_query($orders_db, 'SET NAMES utf8');
+
+$menu_db = mysqli_connect("localhost","gb_orders2","za84ededawps","gb_orders2",8889);
+if (!$menu_db) {
+    die('Connect Error (' . mysqli_connect_errno() . ') '
+            . mysqli_connect_error());
+}
+mysqli_query($menu_db, 'SET NAMES utf8');
