@@ -1,10 +1,10 @@
-<h1 class="center">Ты кто?</h1>
-<div class="center" id="user-type-selector">
-	<button data-type="0">Я - работодатель</button>
-	<button data-type="1">Я ищу работу</button>
+<div class="text-center" id="user-type-selector">
+	<h1 class="text-center" style="margin-top:100px">Ты кто?</h1>
+	<button data-type="0">Я - повар</button>
+	<button data-type="1">Я хочу есть!</button>
 </div>
-<div class="center" id="waiting" style="display:none">
-	<h2 class="center">подождите...</h2>
+<div class="text-center" id="waiting" style="display:none; margin-top:120px">
+	<h2 class="text-center">ща, погодь...</h2>
 </div>
 
 <script>

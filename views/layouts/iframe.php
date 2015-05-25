@@ -4,7 +4,9 @@
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.0/css/jquery.dataTables.css">
+	<link rel="stylesheet" href="/css/mobi.css?v=1">
 	<link rel="stylesheet" href="/css/style.css?v=1">
+	<link rel="stylesheet" href="/css/jquery.dataTables.min.css">
 	<link href='//fonts.googleapis.com/css?family=Open+Sans:600,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
 <div id="page">

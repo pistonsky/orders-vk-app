@@ -1,21 +1,24 @@
 <?php
 
+$content = '';
+
 if ($user['type'] === null) // user has no type yet - new user
 {
 	ob_start();
 	require(dirname(__FILE__) . '/../views/new.php');
 	$content = ob_get_clean();
 }
-if ($user['type'] === 0)
+else if ($user['type'] == 0)
 {
 	ob_start();
-	require(dirname(__FILE__) . '/../views/jobcreator');
+	ob_implicit_flush(false);
+	require(dirname(__FILE__) . '/../views/admin.php');
 	$content = ob_get_clean();
 }
-if ($user['type'] === 1)
+else if ($user['type'] == 1)
 {
 	ob_start();
-	require(dirname(__FILE__) . '/../views/performer');
+	require(dirname(__FILE__) . '/../views/user.php');
 	$content = ob_get_clean();
 }
 

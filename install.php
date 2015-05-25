@@ -31,7 +31,7 @@ mysqli_query($orders_db, "CREATE TABLE IF NOT EXISTS `orders` (
   KEY `status` (`status`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
 
-echo "done.\n\n"; flush();
+echo "done."; flush();
 echo "\nCreating menu table... "; flush();
 
 mysqli_query($menu_db, "CREATE TABLE IF NOT EXISTS `menu` (
@@ -39,8 +39,8 @@ mysqli_query($menu_db, "CREATE TABLE IF NOT EXISTS `menu` (
   `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `price` decimal(9,2) unsigned NOT NULL DEFAULT '0.00',
-  `enabled` tinyint(1) unsigned NOT NULL DEFAULT 1
-  PRIMARY KEY (`id`),
+  `enabled` tinyint(1) unsigned NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
 
 echo "done.\n\n"; flush();
