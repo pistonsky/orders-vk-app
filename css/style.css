@@ -1,3 +1,37 @@
 .tab-container{display:none}
 .tab-container.active{display:block}
 .tab-container.empty{padding-top:200px;text-align:center}
+
+.menu-item {
+    float: left;
+    width: 141px;
+    height: 140px;
+    border: 2px solid white;
+    position: relative;
+    background-size: cover;
+}
+
+.menu-item p {
+    position: absolute;
+    right: 0;
+    bottom: -100%;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 0;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    background: lightgrey;
+    width: 100%;
+    mix-blend-mode: screen;
+    css-animation: 1s;
+    animation: ease-in 1s;
+}
+
+.menu-item:hover p {
+    bottom: 0;
+}
+
+.menu-item:hover {
+    cursor: hand;
+    cursor: pointer;
+}
