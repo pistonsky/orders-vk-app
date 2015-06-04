@@ -25,6 +25,7 @@
     mix-blend-mode: screen;
     css-animation: 1s;
     animation: ease-in 1s;
+    display: none;
 }
 
 .menu-item:hover p {
@@ -34,4 +35,28 @@
 .menu-item:hover {
     cursor: hand;
     cursor: pointer;
+}
+
+.menu-item .info {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+}
+
+.menu-item:hover .info {
+    opacity: 1;
+}
+
+.menu-item .price {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    vertical-align: middle;
+    top: 50%;
+    position: absolute;
+    margin-top: -15px;
 }
