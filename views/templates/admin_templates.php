@@ -11,7 +11,9 @@
 <!-- END ALERT TEMPLATE -->
 <!-- BEGIN MENU TAB TEMPLATE -->
 <script type="text/template" id="tab-menu-template">
-	<table id="menu-table">
-	</table>
+     <% _.each(menu, function(e, i, l){
+          print('<div class="menu-item" style="background-image:url(' + e.picture + ')" title="' + e.description + '"><div class="info"><span class="price">'+ e.price + '&#3647;</span><p class="title">' + e.title + '</p></div></div>');
+     }) %>
+     <div style="clear:both"></div>
 </script>
 <!-- END MENU TAB TEMPLATE -->

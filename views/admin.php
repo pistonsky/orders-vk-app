@@ -44,5 +44,5 @@
 	</div>
 <!-- END PAGE MARKUP -->
 
-<?php include(dirname(__FILE__) . DIRECTORY_SEPARATOR . "templates" . DIRECTORY_SEPARATOR . "admin.php"); ?>
-<?php include(dirname(__FILE__) . DIRECTORY_SEPARATOR . "backbone" . DIRECTORY_SEPARATOR . "admin.php"); ?>
+<?php include(dirname(__FILE__) . DIRECTORY_SEPARATOR . "templates" . DIRECTORY_SEPARATOR . "admin_templates.php"); ?>
+<?php include(dirname(__FILE__) . DIRECTORY_SEPARATOR . "backbone" . DIRECTORY_SEPARATOR . "admin_backbone.php"); ?>

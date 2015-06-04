@@ -20,6 +20,7 @@
 
 		var Router = Backbone.Router.extend({
 			routes: {
+				'': 'menu',
 				'menu': 'menu'
 			}
 		});
