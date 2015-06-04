@@ -39,6 +39,7 @@ mysqli_query($menu_db, "CREATE TABLE IF NOT EXISTS `menu` (
   `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
   `price` decimal(9,2) unsigned NOT NULL DEFAULT '0.00',
+  `picture` varchar(256) NULL,
   `enabled` tinyint(1) unsigned NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
