@@ -20,16 +20,7 @@ switch ($controller)
 		include(dirname(__FILE__) . '/controllers/typechange.php');
 		break;
 	case 'menu':
-		// fetch menu
-		$q = mysqli_query($menu_db, 'SELECT `id`,`title`,`description`,`price`,`enabled` FROM `menu`');
-		$menu = [];
-		while ($row = mysqli_fetch_array($q, MYSQLI_NUM)) {
-			$menu[] = $row;
-		}
-		header('Content-Type: text/json');
-		echo json_encode([
-			'menu'=>$menu
-		]);
+		include(dirname(__FILE__) . '/controllers/menu.php');
 		break;
 	default:
 		include(dirname(__FILE__) . '/controllers/index.php');
