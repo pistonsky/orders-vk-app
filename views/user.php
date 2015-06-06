@@ -14,7 +14,7 @@
 				</nav>
 				<span id="status-hint" style="display: none;"></span>
 				<span id="birthday-reminder" style="display: none;">У вашего друга сегодня день рождения!<br>Подарите ему что-нибудь вкусненькое!</span>
-				<span id="status-wrap" title="обновить">Сумма заказа: <strong><span id="status">150 бат</span></strong></span>
+				<span id="status-wrap" title="обновить">Сумма заказа: <strong><span id="status" class="empty">0</span></strong></span>
 
 		</header>
 		<!-- END HEADER -->

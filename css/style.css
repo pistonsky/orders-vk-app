@@ -116,3 +116,9 @@ div#page-container {
 .menu-item.selected {
     border-color: green;
 }
+
+#status:not(:empty):after {
+    content: '฿';
+    background: none;
+    color: inherit;
+}

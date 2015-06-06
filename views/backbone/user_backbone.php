@@ -37,6 +37,15 @@
 			},
 			recalculate: function() {
 				// recalculate total price
+				total_price = 0;
+				$('.menu-item').each(function(i,e){
+					total_price += $(this).data('price') * $(this).data('count');
+				});
+				if (total_price == 0)
+					$('#status').addClass('empty');
+				else
+					$('#status').removeClass('empty');
+				$('#status').html(total_price);
 			}
 		});
 
