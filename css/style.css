@@ -4,7 +4,7 @@
 
 .menu-item {
     float: left;
-    width: 141px;
+    width: 140px;
     height: 140px;
     border: 2px solid white;
     position: relative;
@@ -59,4 +59,60 @@
     top: 50%;
     position: absolute;
     margin-top: -15px;
+}
+
+span#status-wrap {
+    left: inherit;
+    right: 20px;
+}
+
+footer {
+    padding: 10px 0;
+    text-align: center;
+    background-color:black;
+    height: auto;
+}
+
+header nav {
+    left: inherit;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    top: 25px;
+}
+
+.tab-container {
+    padding: 15px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+div#page-container {
+    height: auto;
+    position: relative;
+}
+
+.menu-item.selected .counter {
+    background-color: green;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    content: attr(data-count);
+    border-radius: 100%;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    z-index:1;
+}
+
+.menu-item.selected {
+    border-color: green;
 }

@@ -7,7 +7,6 @@
 		<!-- BEGIN HEADER -->
 		<header class="navbar">
 			<!-- logo is in the background css property -->
-			<div class="container">
 
 				<nav>
 					<a href="#/menu" class="btn btn-link">Меню</a>
@@ -15,9 +14,8 @@
 				</nav>
 				<span id="status-hint" style="display: none;"></span>
 				<span id="birthday-reminder" style="display: none;">У вашего друга сегодня день рождения!<br>Подарите ему что-нибудь вкусненькое!</span>
-				<span id="status-wrap" title="обновить">Мой заказ на сумму: <strong><span id="status">150 бат</span></strong></span>
+				<span id="status-wrap" title="обновить">Сумма заказа: <strong><span id="status">150 бат</span></strong></span>
 
-			</div>
 		</header>
 		<!-- END HEADER -->
 		<!-- BEGIN PAGE CONTAINER -->

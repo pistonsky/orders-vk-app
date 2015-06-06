@@ -14,7 +14,7 @@
 	<script src="/js/jquery.min.js" type="text/javascript"></script>
 	<script src="/js/underscore-min.js" type="text/javascript"></script>
 	<script src="/js/backbone-min.js" type="text/javascript"></script>
-	<script src="//vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
+	<!-- // <script src="//vk.com/js/api/xd_connection.js?2" type="text/javascript"></script> -->
 	<script type="text/javascript" src="/js/openapi.js"></script>
 	<script src="/js/vk.js"></script>	
 	<script src="/js/jquery.dataTables.min.js" type="text/javascript"></script>

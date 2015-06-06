@@ -7,7 +7,6 @@
 		<!-- BEGIN HEADER -->
 		<header class="navbar">
 			<!-- logo is in the background css property -->
-			<div class="container">
 
 				<nav>
 					<a href="#/menu" class="btn btn-link">Меню</a>
@@ -17,7 +16,6 @@
 				<span id="birthday-reminder" style="display: none;">У вашего друга сегодня день рождения!<br>Подарите ему что-нибудь вкусненькое!</span>
 				<span id="status-wrap" title="обновить">Заказов: <strong><span id="status">14</span></strong></span>
 
-			</div>
 		</header>
 		<!-- END HEADER -->
 		<!-- BEGIN PAGE CONTAINER -->

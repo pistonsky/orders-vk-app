@@ -18,6 +18,30 @@
 		var id = <?php echo $_GET['viewer_id'];?>; // id vkontakte
 		var auth_key = "<?php echo $_GET['auth_key'];?>";
 
+		var MenuPage = Backbone.View.extend({
+			el: '#page',
+			render: function () {
+
+			},
+			events: {
+				'click .menu-item': 'select'
+			},
+			select: function (ev) {
+				$(ev.currentTarget).addClass('selected');
+				current_count = $(ev.currentTarget).data('count');
+				console.info(current_count);
+				current_count++;
+				$(ev.currentTarget).data('count', current_count);
+				$(ev.currentTarget).find('.counter').html(current_count);
+				this.recalculate();
+			},
+			recalculate: function() {
+				// recalculate total price
+			}
+		});
+
+		var menuPage = new MenuPage();
+
 		var Router = Backbone.Router.extend({
 			routes: {
 				'': 'menu',
@@ -58,7 +82,9 @@
 						showMessage("Превышен таймаут запроса.", "Попробуйте просто обновить страницу.", function(){});
 					}
 				});
+
 			}
+			menuPage.render();
 		});
 
 		Backbone.history.start();
