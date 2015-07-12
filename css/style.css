@@ -114,6 +114,10 @@ div#page-container {
     z-index:1;
 }
 
+.menu-item.selected .counter:hover {
+    background-color: red;
+}
+
 .menu-item.selected {
     border-color: green;
 }

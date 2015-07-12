@@ -24,7 +24,10 @@
 
 			},
 			events: {
-				'click .menu-item': 'select'
+				'click .menu-item': 'select',
+				'mouseenter .counter': 'menu_item_counter_mouse_enter',
+				'mouseleave .counter': 'menu_item_counter_mouse_leave',
+				'click .counter': 'remove'
 			},
 			select: function (ev) {
 				$(ev.currentTarget).addClass('selected');
@@ -34,6 +37,23 @@
 				$(ev.currentTarget).data('count', current_count);
 				$(ev.currentTarget).find('.counter').html(current_count);
 				this.recalculate();
+			},
+			menu_item_counter_mouse_enter: function (ev) {
+				$(ev.currentTarget).html('X');
+			},
+			menu_item_counter_mouse_leave: function (ev) {
+				current_count = $(ev.currentTarget).parent().data('count');
+				if (current_count == 0)
+					$(ev.currentTarget).html('');
+				else
+					$(ev.currentTarget).html(current_count);
+			},
+			remove: function (ev) {
+				$(ev.currentTarget).parent().removeClass('selected');
+				$(ev.currentTarget).parent().data('count', 0);
+				$(ev.currentTarget).html('');
+				this.recalculate();
+				return false;
 			},
 			recalculate: function() {
 				// recalculate total price
