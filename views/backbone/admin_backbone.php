@@ -13,7 +13,7 @@
 		$("button#close-alert").click(handler);
 	}
 
-	// VK.init(function() {
+	VK.init(function() {
 
 		var id = <?php echo $_GET['viewer_id'];?>; // id vkontakte
 		var auth_key = "<?php echo $_GET['auth_key'];?>";
@@ -63,9 +63,9 @@
 
 		Backbone.history.start();
 
-	// }, function() {
-	// 	// API initialization failed 
-	// 	// Can reload page here 
-	// }, '5.21');
+	}, function() {
+		// API initialization failed 
+		// Can reload page here 
+	}, '5.21');
 
 </script>
