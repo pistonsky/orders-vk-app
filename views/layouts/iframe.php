@@ -19,6 +19,13 @@
 	<script src="/js/vk.js"></script>	
 	<script src="/js/jquery.dataTables.min.js" type="text/javascript"></script>
 	<?php echo $content;?>
+	<script type="text/javascript">
+
+		function adjustFrameHeight(){
+			console.log("adjustFrameHeight();")
+		}
+
+	</script>
 </body>
 </div>
 </html>

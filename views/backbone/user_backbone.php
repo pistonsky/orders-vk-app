@@ -168,6 +168,7 @@
 								menu: data.menu
 							});
 							$('#tab-menu').html(template).removeClass('empty');
+							adjustFrameHeight();
 						}
 						else
 						{
