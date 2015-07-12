@@ -35,11 +35,25 @@ echo "done."; flush();
 
 echo "\nUpdating orders table, adding `date_created` column... "; flush();
 try {
-  mysqli_query($orders_db, "ALTER TABLE `orders`
-    ADD `date_created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;");
-  echo "done."; flush();
+  if (mysqli_query($orders_db, "ALTER TABLE `orders`
+    ADD `date_created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;") === TRUE) {
+    echo "done."; flush();
+  } else {
+    echo "already there."; flush();
+  }
 } catch (Exception $e) {
   echo "already there."; flush();
+}
+
+echo "\nUpdating orders table, dropping `menu_id` column... "; flush();
+try {
+  if (mysqli_query($orders_db, "ALTER TABLE `orders` DROP `menu_id` ;") === TRUE) {
+    echo "done."; flush();
+  } else {
+    echo "already dropped."; flush();
+  }
+} catch (Exception $e) {
+  echo "already dropped."; flush();
 }
 
 echo "\nCreating order_items table... "; flush();
