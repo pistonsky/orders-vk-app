@@ -8,7 +8,7 @@ require_once(dirname(__FILE__) . '/lib/auth.php');
 require_once(dirname(__FILE__) . '/lib/mysql.php');
 
 $matches = [];
-preg_match('/^\/(.*)(\?.*)$/', $_SERVER['REQUEST_URI'], $matches);
+preg_match('/^\/([^\?]*)(\?.*)?$/', $_SERVER['REQUEST_URI'], $matches);
 $controller = $matches[1];
 
 switch ($controller)
@@ -21,6 +21,9 @@ switch ($controller)
 		break;
 	case 'menu':
 		include(dirname(__FILE__) . '/controllers/menu.php');
+		break;
+	case 'order':
+		include(dirname(__FILE__) . '/controllers/order.php');
 		break;
 	default:
 		include(dirname(__FILE__) . '/controllers/index.php');

@@ -1,6 +1,8 @@
-	<div class="modal fade in" id="alert" tabindex="-1" role="dialog">
+	<div class="modal fade in" id="alert" tabindex="-1" role="dialog"></div>
 
-	</div> 
+	<div class="modal fade in" id="order-confirm" tabindex="-1" role="dialog"></div> 
+
+	<div class="modal fade in" id="loading" tabindex="-1" role="dialog"></div> 
 
 	<!-- BEGIN PAGE MARKUP -->     
 	<div class="page" id="page-container">

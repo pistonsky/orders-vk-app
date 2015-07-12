@@ -2,6 +2,8 @@
 require_once(dirname(__FILE__) . '/mysql.php');
 require_once(dirname(__FILE__) . '/params.php');
 
+if (isset($_POST['viewer_id'])) $_GET['viewer_id'] = $_POST['viewer_id'];
+if (isset($_POST['auth_key'])) $_GET['auth_key'] = $_POST['auth_key'];
 if ((!isset($_GET['viewer_id'])) || (!isset($_GET['auth_key'])))
 {
 	header(401, 'Not Authorized');

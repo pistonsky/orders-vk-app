@@ -13,6 +13,22 @@
 		$("button#close-alert").click(handler);
 	}
 
+	function showLoading(handler) {
+		var template = _.template($("#loading-template").html(), {
+			
+		});
+		$("#loading").html(template).attr("style","display:block");
+		$("#alert div.alert").css("margin-top",30 + "%");
+		$("#page-container").addClass("blurred");
+		$("#cancel").click(handler);
+		setTimeout(function(){
+			$("#cancel").fadeIn();
+		}, 5000);
+		setTimeout(function(){
+			$("#cancel")[0].disabled = false;
+		}, 7000);
+	}
+
 	// VK.init(function() {
 
 		var id = <?php echo $_GET['viewer_id'];?>; // id vkontakte
@@ -27,7 +43,9 @@
 				'click .menu-item': 'select',
 				'mouseenter .counter': 'menu_item_counter_mouse_enter',
 				'mouseleave .counter': 'menu_item_counter_mouse_leave',
-				'click .counter': 'remove'
+				'click .counter': 'remove',
+				'click #order-button': 'order',
+				'click #confirm': 'confirm'
 			},
 			select: function (ev) {
 				$(ev.currentTarget).addClass('selected');
@@ -69,6 +87,52 @@
 					$('#order-button')[0].disabled = false;
 				}
 				$('#status').html(total_price);
+			},
+			order: function() {
+				var template = _.template($("#order-confirm-template").html(), {
+					title: 'Твой заказ на '+$('#status').html()+' бат',
+					message: 'Всё, заказываем?'
+				});
+				$("#order-confirm").html(template).show();
+				$("#alert div.alert").css("margin-top",30 + "%");
+				$("#page-container").addClass("blurred");
+			},
+			confirm: function() {
+				$("#order-confirm").hide();
+				items = [];
+				$(".menu-item.selected").each(function(){
+					items.push({
+						id: $(this).data('id'),
+						count: $(this).data('count')
+					});
+				});
+				$.ajax({
+					method: "POST",
+					url: "/order",
+					dataType: "json",
+					data: {
+						viewer_id: id, auth_key: auth_key,
+						items: items
+					},
+					success: function (data) {
+						if (data.success)
+						{
+							$("#loading").hide();
+							showMessage('Всё, готово.', 'Жди хавку!', function(){$("#alert").fadeOut(); $("#page-container").removeClass("blurred");}, 30);
+							setTimeout(function(){$("#alert").fadeOut(); $("#page-container").removeClass("blurred");}, 3000);
+						}
+						else
+						{
+							showMessage("Что-то пошло не так.", "Пистонский лажает! Скажи ему, что он хреновый кодер.", function(){});
+						}
+					},
+					error: function (x, t, m) {
+						showMessage("Превышен таймаут запроса.", "Чё опять с интернетом?", function(){});
+					}
+				});
+				showLoading(function(){
+					$("#loading").hide();
+				});
 			}
 		});
 
@@ -107,11 +171,11 @@
 						}
 						else
 						{
-							showMessage("Что-то пошло не так.", "Попробуйте просто обновить страницу.", function(){});
+							showMessage("Что-то пошло не так.", "Пистонский лажает! Обновляй страницу.", function(){});
 						}
 					},
 					error: function (x, t, m) {
-						showMessage("Превышен таймаут запроса.", "Попробуйте просто обновить страницу.", function(){});
+						showMessage("Превышен таймаут запроса.", "Чё опять с интернетом?", function(){});
 					}
 				});
 

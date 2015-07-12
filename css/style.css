@@ -145,3 +145,7 @@ div#page-container {
 #order-button:not([disabled]) {
     background-color: #FF8824;
 }
+
+div.alert{text-align:center;background:transparent;margin-top:30%;margin-left:auto;margin-right:auto}
+div.alert h1{font-size:36px}
+div.alert p{font-size:20px;margin-bottom:20px}
