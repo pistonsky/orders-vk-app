@@ -22,11 +22,11 @@
 	<script type="text/javascript">
 
 		function adjustFrameHeight() {
-			setFrameHeight($('#page').height()+Number(20));
+			setFrameHeight($('#page').height());
 		}
 
 		function setFrameHeight(height) {
-			VK.callMethod("resizeWindow", 1000, height);
+			VK.callMethod("resizeWindow", 590, height);
 		}
 
 	</script>
