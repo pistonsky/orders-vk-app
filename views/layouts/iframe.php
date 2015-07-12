@@ -21,8 +21,12 @@
 	<?php echo $content;?>
 	<script type="text/javascript">
 
-		function adjustFrameHeight(){
-			console.log("adjustFrameHeight();")
+		function adjustFrameHeight() {
+			setFrameHeight($('#page').height()+Number(20));
+		}
+
+		function setFrameHeight(height) {
+			VK.callMethod("resizeWindow", 1000, height);
 		}
 
 	</script>
