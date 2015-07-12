@@ -94,7 +94,7 @@
 					message: 'Всё, заказываем?'
 				});
 				$("#order-confirm").html(template).show();
-				$("#alert div.alert").css("margin-top",30 + "%");
+				$("#order-confirm div.alert").css("margin-top",20 + "%");
 				$("#page-container").addClass("blurred");
 			},
 			confirm: function() {
@@ -118,16 +118,16 @@
 						if (data.success)
 						{
 							$("#loading").hide();
-							showMessage('Всё, готово.', 'Жди хавку!', function(){$("#alert").fadeOut(); $("#page-container").removeClass("blurred");}, 30);
+							showMessage('Всё, готово.', 'Жди хавку!', function(){$("#alert").fadeOut(); $("#page-container").removeClass("blurred");}, 20);
 							setTimeout(function(){$("#alert").fadeOut(); $("#page-container").removeClass("blurred");}, 3000);
 						}
 						else
 						{
-							showMessage("Что-то пошло не так.", "Пистонский лажает! Скажи ему, что он хреновый кодер.", function(){});
+							showMessage("Что-то пошло не так.", "Пистонский лажает! Скажи ему, что он хреновый кодер.", function(){}, 20);
 						}
 					},
 					error: function (x, t, m) {
-						showMessage("Превышен таймаут запроса.", "Чё опять с интернетом?", function(){});
+						showMessage("Превышен таймаут запроса.", "Чё опять с интернетом?", function(){}, 20);
 					}
 				});
 				showLoading(function(){
@@ -172,11 +172,11 @@
 						}
 						else
 						{
-							showMessage("Что-то пошло не так.", "Пистонский лажает! Обновляй страницу.", function(){});
+							showMessage("Что-то пошло не так.", "Пистонский лажает! Обновляй страницу.", function(){}, 20);
 						}
 					},
 					error: function (x, t, m) {
-						showMessage("Превышен таймаут запроса.", "Чё опять с интернетом?", function(){});
+						showMessage("Превышен таймаут запроса.", "Чё опять с интернетом?", function(){}, 20);
 					}
 				});
 
