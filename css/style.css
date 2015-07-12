@@ -61,8 +61,9 @@
     margin-top: -15px;
 }
 
-span#status-wrap {
+#status-wrap {
     left: inherit;
+    top: 10px;
     right: 20px;
 }
 
@@ -121,4 +122,22 @@ div#page-container {
     content: '฿';
     background: none;
     color: inherit;
+}
+
+#order-button-wrap {
+    right: 20px;
+    top: 40px;
+    position: absolute;
+}
+
+#order-button {
+    width: 120px;
+    border: none;
+    color: white;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+#order-button:not([disabled]) {
+    background-color: #FF8824;
 }

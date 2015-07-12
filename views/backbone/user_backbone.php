@@ -41,10 +41,13 @@
 				$('.menu-item').each(function(i,e){
 					total_price += $(this).data('price') * $(this).data('count');
 				});
-				if (total_price == 0)
+				if (total_price == 0) {
 					$('#status').addClass('empty');
-				else
+					$('#order-button')[0].disabled = true;
+				} else {
 					$('#status').removeClass('empty');
+					$('#order-button')[0].disabled = false;
+				}
 				$('#status').html(total_price);
 			}
 		});
