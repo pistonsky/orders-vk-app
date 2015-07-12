@@ -32,6 +32,31 @@ mysqli_query($orders_db, "CREATE TABLE IF NOT EXISTS `orders` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
 
 echo "done."; flush();
+
+echo "\nUpdating orders table, adding `date_created` column... "; flush();
+try {
+  mysqli_query($orders_db, "ALTER TABLE `orders`
+    ADD `date_created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;");
+  echo "done."; flush();
+} catch (Exception $e) {
+  echo "already there."; flush();
+}
+
+echo "\nCreating order_items table... "; flush();
+
+mysqli_query($orders_db, "CREATE TABLE IF NOT EXISTS `orders_items` (
+  `id` int(7) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` int(7) unsigned NOT NULL,
+  `menu_id` int(5) NOT NULL,
+  `quantity` int(5) NOT NULL,
+  `status` int(2) NOT NULL DEFAULT 0,
+  `last_modified` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `order_id` (`order_id`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
+
+echo "done."; flush();
 echo "\nCreating menu table... "; flush();
 
 mysqli_query($menu_db, "CREATE TABLE IF NOT EXISTS `menu` (
