@@ -19,8 +19,7 @@ else
 
 	if (!isset($google_response->name))
 	{
-		header(401, 'Not Authorized');
-		exit;
+		$user = null;
 	}
 	else
 	{
