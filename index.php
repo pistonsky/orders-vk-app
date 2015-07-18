@@ -11,20 +11,34 @@ $matches = [];
 preg_match('/^\/([^\?]*)(\?.*)?$/', $_SERVER['REQUEST_URI'], $matches);
 $controller = $matches[1];
 
-switch ($controller)
+if ($user === null)
 {
-	case 'init':
-		include(dirname(__FILE__) . '/controllers/init.php');
-		break;
-	case 'typechange':
-		include(dirname(__FILE__) . '/controllers/typechange.php');
-		break;
-	case 'menu':
-		include(dirname(__FILE__) . '/controllers/menu.php');
-		break;
-	case 'order':
-		include(dirname(__FILE__) . '/controllers/order.php');
-		break;
-	default:
-		include(dirname(__FILE__) . '/controllers/index.php');
+	if ($controller == 'tokensignin')
+	{
+		include(dirname(__FILE__) . '/controllers/auth.php');
+	}
+	else
+	{
+		include(dirname(__FILE__) . '/controllers/login.php');
+	}
+}
+else
+{
+	switch ($controller)
+	{
+		case 'init':
+			include(dirname(__FILE__) . '/controllers/init.php');
+			break;
+		case 'typechange':
+			include(dirname(__FILE__) . '/controllers/typechange.php');
+			break;
+		case 'menu':
+			include(dirname(__FILE__) . '/controllers/menu.php');
+			break;
+		case 'order':
+			include(dirname(__FILE__) . '/controllers/order.php');
+			break;
+		default:
+			include(dirname(__FILE__) . '/controllers/index.php');
+	}
 }

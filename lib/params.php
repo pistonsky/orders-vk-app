@@ -1,4 +1,3 @@
 <?php
 
-define('APP_ID', 4912793);
-define('APP_SECRET', 'JLtBewZ8tBmloQh8MCQd');
+define("GOOGLE_OAUTH_URL", "https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=");

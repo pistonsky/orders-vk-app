@@ -1,11 +1,47 @@
+.blurred{-webkit-filter:blur(5px);-moz-filter:blur(5px);-o-filter:blur(5px);-ms-filter:blur(5px);filter:blur(5px)}
 .tab-container{display:none}
 .tab-container.active{display:block}
 .tab-container.empty{padding-top:200px;text-align:center}
 
+@media all and (max-width: 669px) {
+    #tab-menu {
+        width: 350px;
+    }
+}
+
+@media all and (max-width: 989px) and (min-width: 670px) {
+    #tab-menu {
+        width: 670px;
+    }
+}
+
+@media all and (max-width: 1309px) and (min-width: 990px) {
+    #tab-menu {
+        width: 990px;
+    }
+}
+
+@media all and (max-width: 1629px) and (min-width: 1310px) {
+    #tab-menu {
+        width: 1310px;
+    }
+}
+
+@media all and (min-width: 1630px) {
+    #tab-menu {
+        width: 1630px;
+    }
+}
+
+#tab-menu {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .menu-item {
     float: left;
-    width: 140px;
-    height: 140px;
+    width: 320px;
+    height: 320px;
     border: 2px solid white;
     position: relative;
     background-size: cover;
@@ -149,3 +185,25 @@ div#page-container {
 div.alert{text-align:center;background:transparent;margin-top:30%;margin-left:auto;margin-right:auto}
 div.alert h1{font-size:36px}
 div.alert p{font-size:20px;margin-bottom:20px}
+
+.overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.8);
+}
+
+.overlay .centered{
+    position: fixed;
+    top:50%;
+    left:50%;
+}
+
+.g-signin2{
+    width: 120px;
+    height: 36px;
+    margin-top: -18px;
+    margin-left: -60px;
+}

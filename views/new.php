@@ -9,9 +9,6 @@
 
 <script>
 
-	var viewer_id = "<?= $_GET['viewer_id'] ?>";
-	var auth_key = "<?= $_GET['auth_key'] ?>";
-
 	$('button').click(function(){
 		$('#user-type-selector').hide();
 		$('#waiting').show();
@@ -20,8 +17,6 @@
 			url: "/typechange",
 			type: "GET",
 			data: {
-				viewer_id: viewer_id,
-				auth_key: auth_key,
 				type: type
 			},
 			success: function() {

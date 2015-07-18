@@ -9,7 +9,7 @@ include(dirname(__FILE__) . '/lib/mysql.php');
 echo "\nCreating users table... "; flush();
 
 mysqli_query($users_db, "CREATE TABLE IF NOT EXISTS `users` (
-  `id` varchar(20) NOT NULL,
+  `id` varchar(255) NOT NULL,
   `type` tinyint(1) unsigned NULL,
   `name` varchar(100) NULL,
   `photo_url` varchar(200) NULL,
