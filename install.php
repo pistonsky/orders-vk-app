@@ -7,7 +7,6 @@ error_reporting(-1);
 include(dirname(__FILE__) . '/lib/mysql.php');
 
 echo "\nCreating users table... "; flush();
-
 mysqli_query($users_db, "CREATE TABLE IF NOT EXISTS `users` (
   `id` varchar(255) NOT NULL,
   `type` tinyint(1) unsigned NULL,
@@ -17,8 +16,17 @@ mysqli_query($users_db, "CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   KEY `type` (`type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;");
-
 echo "done."; flush();
+
+$result = mysqli_fetch_row(mysqli_query($users_db, "SHOW COLUMNS FROM `users`"));
+if (($result[0] == "id") && ($result[1] == "varchar(255)")) {
+  echo "\nModifying users table..."; flush();
+  mysqli_query($users_db, "ALTER TABLE `users` CHANGE `id` `email` VARCHAR(255) NULL DEFAULT NULL");
+  mysqli_query($users_db, "DROP INDEX `PRIMARY` ON `users`");
+  mysqli_query($users_db, "ALTER TABLE `users` ADD `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY FIRST");
+  echo "done."; flush();
+}
+
 echo "\nCreating orders table... "; flush();
 
 mysqli_query($orders_db, "CREATE TABLE IF NOT EXISTS `orders` (
