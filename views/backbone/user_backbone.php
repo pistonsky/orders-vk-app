@@ -113,7 +113,7 @@
 					if (data.success)
 					{
 						$("#loading").hide();
-						showMessage('Всё, готово.', 'Жди хавку!', function(){$("#alert").fadeOut(); $("#page-container").removeClass("blurred");}, 20);
+						showMessage('Всё, готово.', 'Ждите писчу, сэр!', function(){$("#alert").fadeOut(); $("#page-container").removeClass("blurred");}, 20);
 						setTimeout(function(){$("#alert").fadeOut(); $("#page-container").removeClass("blurred");}, 3000);
 					}
 					else
