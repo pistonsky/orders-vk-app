@@ -26,7 +26,7 @@ else
 		$user_name = $google_response->name;
 		$user_email = $google_response->email;
 		$sql = 'SELECT * FROM `users` WHERE `id`=\'' . $user_email . '\' LIMIT 1';
-		if ($q = mysqli_query($users_db, $sql))
+		if (($q = mysqli_query($users_db, $sql)) && (mysqli_num_rows($q)))
 		{
 			// user already exists
 			$user = mysqli_fetch_assoc($q);
