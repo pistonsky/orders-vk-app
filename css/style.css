@@ -207,3 +207,8 @@ div.alert p{font-size:20px;margin-bottom:20px}
     margin-top: -18px;
     margin-left: -60px;
 }
+
+.loading {
+    margin-top: 0;
+    margin-bottom: 200px;
+}

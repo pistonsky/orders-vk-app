@@ -26,10 +26,10 @@
 			<!-- BEGIN CONTAINER -->
 			<div id="container">
 				<div class="empty tab-container" id="tab-menu">
-					<h1>Ща, погодь...</h1>
+					<h1 class="loading">Ща, погодь...</h1>
 				</div>
 				<div class="empty tab-container active" id="tab-orders">
-					<h1>Ща, погодь...</h1>
+					<h1 class="loading">Ща, погодь...</h1>
 				</div>
 			</div>
 			<!-- END CONTAINER -->
