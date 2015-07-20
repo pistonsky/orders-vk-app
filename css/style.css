@@ -47,25 +47,29 @@
     background-size: cover;
 }
 
-.menu-item p {
+.menu-item p.title {
     position: absolute;
-    right: 0;
-    bottom: -100%;
-    color: black;
-    font-size: 18px;
-    margin-bottom: 0;
-    padding-right: 5px;
-    padding-bottom: 2px;
-    background: lightgrey;
+    top: 25%;
+    color: white;
+    font-size: 25px;
+    margin-top: -12px;
+    background: transparent;
     width: 100%;
-    mix-blend-mode: screen;
-    css-animation: 1s;
-    animation: ease-in 1s;
-    display: none;
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
-.menu-item:hover p {
-    bottom: 0;
+.menu-item p.description {
+    position: absolute;
+    top: 75%;
+    color: white;
+    font-size: 20px;
+    background: transparent;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    transform: translateY(-50%);
 }
 
 .menu-item:hover {
@@ -182,7 +186,7 @@ div#page-container {
     background-color: #FF8824;
 }
 
-div.alert{text-align:center;background:transparent;margin-top:30%;margin-left:auto;margin-right:auto}
+div.alert{text-align:center;background:transparent;margin-top:20%;margin-left:auto;margin-right:auto}
 div.alert h1{font-size:36px}
 div.alert p{font-size:20px;margin-bottom:20px}
 
